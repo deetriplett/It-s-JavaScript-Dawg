@@ -1,4 +1,5 @@
-alert("Time for some Mad Libs!Help me finish the story by giving answers to the prompt.");.  
+alert("Hey!");
+alert("Time for some Mad Libs! Help me finish the story by giving answers to the prompt.");
 
 var name = prompt("Silly Name");
 var animal = prompt("Type of pet");
@@ -10,8 +11,17 @@ var verb = prompt("Verb");
 
 alert("You are done! Now let's see that story!");
 
+document.write("<h2>" + name + " is our pet " + animal + ". She was left home alone. </h2>");
+document.write("<h2>" + name + " " + action + " on the " + furniture + " and ate the bread. </h2>");
+document.write("<h2>" + exclaim.toUpperCase() + "! Mom yelled. </h2>"); 
+document.write("<h2> Now we have to make sandwiches out of " + food + ". They tasted " + verb + ". </h2>");
 
-document.write("<h1>" + name + " is our pet " + animal + ". She was left home alone. </h1>");
-document.write("<h1>" + name + action + " on the " + furniture + " and ate the bread." </h1>);
-document.write("<h1>" + exclaim.toUpperCase() + "! Mom yelled. </h1>"); 
-document.write("<h1> Now we have to make sandwhiches out of" + food + ". They tasted" + verb + ". </h1>");
+console.log(name);
+console.log(animal);
+console.log(action);
+console.log(furniture);
+console.log(exclaim);
+console.log(food);
+console.log(verb);
+
+console.log("End StoryMaker");
