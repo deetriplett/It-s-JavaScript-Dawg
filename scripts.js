@@ -1,13 +1,16 @@
-var message = "Hello From Sugar Fox!";
+var message = "Hello! I'm Sugar Fox!";
 
 alert(message);
 
-message = "We are glad you're here.";
+var visitorName = prompt("What is your name?");
+
+message = "We are glad you're here " + visitorName;
 
 alert(message);
 
 document.write("<h1>Welcome!");
 document.write("<h2>From Our Family to Yours</h2>");
-document.write("<h3>Happy Holidays!</h3>");
+
+//Ask a question and capture response prompt();
 
 console.log("Program finished!");
