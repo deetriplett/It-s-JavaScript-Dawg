@@ -12,19 +12,19 @@ var questionsLeft = '[ ' + questions + ' left ]';
 var animal = prompt("Type of pet" + questionsLeft);
 questions -= 1;
 var questionsLeft = '[ ' + questions + ' left ]'; 
-var action = prompt("Now I need an action in the past tense" + questionsLeft);
+var action = prompt("Now I need a verb (action) in the past tense" + questionsLeft);
 questions -= 1;
 var questionsLeft = '[ ' + questions + ' left ]'; 
 var furniture = prompt("A large piece of furniture" + questionsLeft);
 questions -= 1;
 var questionsLeft = '[ ' + questions + ' left ]'; 
-var exclaim = prompt("Exclaimation of your liking!" + questionsLeft);
+var exclaim = prompt("Exclamation of your liking!" + questionsLeft);
 questions -= 1;
 var questionsLeft = '[ ' + questions + ' left ]'; 
 var food = prompt("Type of food" + questionsLeft);
 questions -= 1;
 var questionsLeft = '[ ' + questions + ' left ]'; 
-var verb = prompt("Verb" + questionsLeft);
+var verb = prompt("Adjective" + questionsLeft);
 
 
 alert("You are done! Now let's see that story!");
