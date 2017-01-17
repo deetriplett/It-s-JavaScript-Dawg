@@ -2,16 +2,24 @@ alert("Hey!");
 alert("Time for some Mad Libs! Help me finish the story by giving answers to the prompt.");
 
 //Question countdown
-var questions = 7; 
+var questions = 7; //[7 questions left]
+var questionLeft = '[ ' + questions + ' left ]'; 
 
-//Mad Lib Questions
-var name = prompt("Silly Name");
-var animal = prompt("Type of pet");
-var action = prompt("Now I need an action in the past tense");
-var furniture = prompt("A large piece of furniture");
-var exclaim = prompt("Exclaimation of your liking!");
-var food = prompt("Type of food");
-var verb = prompt("Verb");
+//Mad Lib Questions 
+var name = prompt("Silly Name" + questionsLeft);
+questions -= 1;
+var animal = prompt("Type of pet" + questionsLeft);
+questions -= 1;
+var action = prompt("Now I need an action in the past tense" + questionsLeft);
+questions -= 1;
+var furniture = prompt("A large piece of furniture" + questionsLeft);
+questions -= 1;
+var exclaim = prompt("Exclaimation of your liking!" + questionsLeft);
+questions -= 1;
+var food = prompt("Type of food" + questionsLeft);
+questions -= 1;
+var verb = prompt("Verb" + questionsLeft);
+questions -= 1;
 
 alert("You are done! Now let's see that story!");
 
