@@ -1,6 +1,6 @@
 var html = '';
 
-<div>1</div>
+//<div>1</div>
 
 for ( var i = 1; i <= 10; i +=1) {
   html+= '<div>' + i + '</div>';
