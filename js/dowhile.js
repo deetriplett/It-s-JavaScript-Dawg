@@ -41,4 +41,4 @@ document.write("<h1> It took you " + guessCount + " tries to correctly guess" + 
 // if ( correctGuess ) {         
 // document.write("<h1> You guessed the number!</h1>");
 // document.write("<h1> It took you " + guessCount + " tries to correctly guess" + randomNumber + "!</h1>");
-//}
+//} else { document.write("<h1> Sorry you did not guess the right number. </h1>");}
