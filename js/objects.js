@@ -20,10 +20,18 @@ var person = {
   student: true,
   skills: ['JavaScript','HTML','CSS']
   };
-
+//insert variable message into the output div
 function print(message) {
   var div = document.getElementById('output');
   div.innerHTML = message;
 }
 
 var message = "<p>Hello. My name is " + person.name + " and I am " + person.age + ".</p>"; 
+message += "<p>I live in the " + person.country + ".</p>";
+person.name = "Rainbow Dash";
+message += "<p>But I wish my name was " + person.name + ".</p>";
+message += "<p>I have " person.skills.length + " skills. They are: " + person.skills + ". </p>";
+
+print(message);
+
+
