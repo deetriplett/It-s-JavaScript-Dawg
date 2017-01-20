@@ -1,8 +1,12 @@
 var questions = [
-  ["How many states are in the United States?", 50]
-  ["How many continents are there?", 7]
-  ["How many legs does an insect have", 6]
-  ["How many sides are there of an octagon?", 8] 
+  {question: "How many states are in the United States?", 
+   answer: 50},
+  {question: "How many continents are there?",
+   answer:7},
+  {question: "How many legs does an insect have", 
+   answer: 6},
+  {question: "How many sides are there of an octagon?",
+   answer: 8} 
 ];
 
 var correctAnswers = 0;
