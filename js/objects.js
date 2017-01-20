@@ -30,7 +30,7 @@ var message = "<p>Hello. My name is " + person.name + " and I am " + person.age 
 message += "<p>I live in the " + person.country + ".</p>";
 person.name = "Rainbow Dash";
 message += "<p>But I wish my name was " + person.name + ".</p>";
-message += "<p>I have " person.skills.length + " skills. They are: " + person.skills + ". </p>";
+message += "<p>I have " person.skills.length + " skills. They are: " + person.skills.join(', ') + ". </p>";
 
 print(message);
 
