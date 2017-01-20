@@ -4,6 +4,10 @@ var green;
 var blue;
 var rgbColor;
 
+function randomRGB() {
+  return Math.floor(Math.random() * 256 );
+}
+
 for ( var i = 1; i <= 10; i += 1) {
 red = Math.floor(Math.random() * 256 );
 green = Math.floor(Math.random() * 256 );
