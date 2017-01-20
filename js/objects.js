@@ -26,4 +26,4 @@ function print(message) {
   div.innerHTML = message;
 }
 
-
+var message = "<p>Hello. My name is " + person.name + " and I am " + person.age + ".</p>"; 
