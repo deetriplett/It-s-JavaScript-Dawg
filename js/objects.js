@@ -34,4 +34,7 @@ message += "<p>I have " person.skills.length + " skills. They are: " + person.sk
 
 print(message);
 
-
+//for...in loop with bracket notation to access property values
+for ( key in person ) {
+  console.log(key, ',', person[key]);
+ }
