@@ -9,7 +9,8 @@ var correctAnswers = 0;
 var question;
 var answer;
 var response;
-var html;
+var correct = [];
+var wrong = [];
 
 
 function print(message) {
@@ -26,7 +27,7 @@ for ( var i = 0; i < questions.length; i += 1 ) {
   }
 }
 
-html = "You got " + correctAnswers + " question(s) right!";
+ var html = "You got " + correctAnswers + " question(s) right!";
 print(html);
 
 
