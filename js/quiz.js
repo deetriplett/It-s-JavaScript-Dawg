@@ -24,6 +24,9 @@ for ( var i = 0; i < questions.length; i += 1 ) {
   response = parseint(prompt(question));
   if (response === answer) {
     correctAnswers =+1;
+    correct.push(question);//push method
+  } else {
+    wrong.push(question);
   }
 }
 
