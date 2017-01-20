@@ -15,3 +15,10 @@ var html;
 function print(message) {
   document.write(message);
 }
+
+//Loop thru array
+for ( var i = 0; i < questions.length; i += 1 ) {
+  question = questions[i][0];
+  answer = questions[i][1];
+  response = parseint(prompt(question));
+}
