@@ -1,30 +1,28 @@
-const toggleList = document.getElementById('toggleList');
-const listDiv = document.querySelector('.list');
-const descriptionInput =document.querySelector('input.description');
-const descriptionP = document.querySelector('p.description');
-const descriptionButton = document.querySelector('button.description');
-const addItemInput = document.querySelector('input.addItemInput');
-const addItemButton = document.querySelector('button.addItem');
-
-descriptionButton.addEventListener('click', () => {
-  descriptionP.innerHTML = 'descriptionInput.value +  ';
-});
-  
-p.title = "List Description";
-  
-toggleList.addEventListener('click', () => {
-  if (listDiv.style.display == "none") {
-    toggleList.textContent = "Hide List";
-    listDiv.style.display = 'block';
-  } else {
-  toggleList.textContent = "Show List";
-  listDiv.style.display = 'none';
-  }
-  
-});
-  
-addItemButton.addEventListener('click', () => {
-  let li = document.createElement('li');
-  li.textContext.addItemInput.value;
-   ul.appendChild(li);
-});
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript and the DOM</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <h1 id="myHeading">JavaScript and the DOM</h1>
+    <p>Making a web page interactive</p>
+    <button id ="toggleList">Hide List</button>
+    <div class="list">
+      <p class="description">Things that are purple:</p>
+      <input type="text" class="description">
+     <button class="description">Change List Description</button>
+ 
+      <ul>
+        <li>grapes</li>
+        <li>amethyst</li>
+        <li>lavender</li>
+        <li>plums</li>
+      </ul>
+     <input type="text" class="addItemInput">
+     <button class="addItemButton">Add Item</button>
+     <button class="removeItemButton">Remove Last Item</button>
+     </div>
+    <script src="app.js"></script>
+  </body>
+</html>
