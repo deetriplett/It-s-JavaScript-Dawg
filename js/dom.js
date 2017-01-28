@@ -26,4 +26,5 @@ toggleList.addEventListener('click', () => {
 addItemButton.addEventListener('click', () => {
   let li = document.createElement('li');
   li.textContext.addItemInput.value;
+   ul.appendChild(li);
 });
