@@ -7,7 +7,7 @@ const addItemInput = document.querySelector('input.addItemInput');
 const addItemButton = document.querySelector('button.addItem');
 
 descriptionButton.addEventListener('click', () => {
-  descriptionP.innerHTML = descriptionInput.value +  ';
+  descriptionP.innerHTML = 'descriptionInput.value +  ';
 });
   
 p.title = "List Description";
