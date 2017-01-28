@@ -7,17 +7,23 @@ const descriptionButton = document.querySelector('button.description');
 const addItemInput = document.querySelector('input.addItemInput');
 const addItemButton = document.querySelector('button.addItemButton');
 const removeItemButton = document.querySelector('button.removeItemButton');
-const listItems = document.getElementsByTagName('li');
 
 //Mouse Over Event for List//
-for (let index = 0; index < listItems.length; index +=1) {
-  listItems[index].addEventListener('mouseover', () => {
-    listItems[index].textContent = listItems[index].textContent.toUpperCase();
+listDiv.addEventListener('mouseover', (event) => { 
+  if (event.target.tagName == "LI") { 
+    event.target.textContent = event.target.textContent.toUpperCase();
+    }                                          
   });
-  listItems[index].addEventListener('mouseout', () => {
-    listItems[index].textContent = listItems[index].textContent.toLowerCase();
+ listDiv.addEventListener('mouseout', (event) => {
+   if (event.target.tagName == "LI") {
+    event.target.textContent = event.target.textContent.toLowerCase();
+    }
   });
-}
+
+//When any element is clicked, it's logged
+//document.addEventListener('click', (event) => {
+//  console.log(event.target);
+//});
 
 //Hide-Show Toggle for List//  
 toggleList.addEventListener('click', () => {
