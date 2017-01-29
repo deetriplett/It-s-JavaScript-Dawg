@@ -1,14 +1,26 @@
-const xhr = new XMLHttpRequest();
-xhr.open('GET', '../data/employees.json');
-xhr.onreadystatechange = handleResponse;
-xhr.send();
+function getJSON(url) {
+  return new Promise(function(resolve, reject){
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', url);
+      xhr.onreadystatechange = handleResponse;
+      xhr.onerror = function(error) {reject(error);}
+      xhr.send();
 
-function handleResponse() {
-  if(xhr.readyState === 4 && xhr.status === 200) {
-    var employees = JSON.parse(xhr.responseText);
-    addEmployeesToPage(employees)
-  }
-};
+  function handleResponse() {
+    if(xhr.readyState === 4) {
+      if(xhr.status === 200) {
+      let employees = JSON.parse(xhr.responseText);
+      resolve(employees)
+      } else {
+        reject(this.statusText);
+    }//END if 
+  }; //End handleResponse 
+  };//End Promise
+    });//End getJSON function
+
+const ajaxPromise = getJSON();
+
+
 
 
 //Generate List Items, Json passed into it and returned//
@@ -28,22 +40,24 @@ function generatListItems(employees)  {
 } //End Generate List Items
 
 
-
+// Final HTML that appends to DOM//
 function generateUnorderedList(listItems) {
     return '<ul class="bulleted">' + listItems +  '</ul>';
 }
 
-function addEmployeesToPage(employees) {
-    document.getElementById('employeeList').innerHTML = generateUnorderedList(generatListItems(employees));
+//
+function addEmployeesToPage(unorderedList) {
+    document.getElementById('employeeList').innerHTML = unorderedList;
 }
 
-
-ajaxPromise.then(generatListItems)
+getJSON('../data/employees.json')
+            .then(generatListItems)
             .then(generateUnorderedList)
             .then(addEmployeesToPage)
             .catch(function(error){
                 console.log(error); 
-            });
+            })
+          
 
 
 
