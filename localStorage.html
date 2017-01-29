@@ -4,7 +4,7 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>Search Bar Demo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="stylesheets/page.css" />
+  <link rel="stylesheet" href="stylesheets/localStorage.css" />
   <link href='https://fonts.googleapis.com/css?family=Bitter:400,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
@@ -41,15 +41,23 @@
       }
     }
 
-    function saveSearchString() {
+    function saveSearchString(str) {
+      let searches = getRecentSearches();
+      if (!str || searches.indexOf(str) > -1) {
+        return false;
+      }
+      searches.push(str);
+      localStorage.setItems('recentSearches', JSON.stringify(str));
+      return true;
     }
+    
 
     function removeSearches() {
     }
 
     // Create an li, given string contents, append to the supplied ul
     function appendListItem(listElement, string) {
-      var listItemElement = document.createElement('LI');
+      let listItemElement = document.createElement('LI');
       listItemElement.innerHTML = string;
       listElement.appendChild(listItemElement);
     }
@@ -62,20 +70,20 @@
     
     window.onload = function() {
       if(supportsLocalStorage)) {
-      var searchForm = document.getElementById('searchForm');
-      var searchBar = document.getElementById('searchBar');
-      var recentSearchList = document.getElementById('recentSearchList');
-      var clearButton = document.getElementById('clearStorage');
+      let searchForm = document.getElementById('searchForm');
+      let searchBar = document.getElementById('searchBar');
+      let recentSearchList = document.getElementById('recentSearchList');
+      let clearButton = document.getElementById('clearStorage');
 
       // Initialize display list
-      var recentSearches = getRecentSearches();
+     let recentSearches = getRecentSearches();
       recentSearches.forEach(function(searchString) {
         appendListItem(recentSearchList,searchString);
       });
 
       // Set event handlers
       searchForm.addEventListener('submit', function(event) {
-        var searchString = searchBar.value;
+        let searchString = searchBar.value;
         if (saveSearchString(searchString)) {
           appendListItem(recentSearchList, searchString);
         }
