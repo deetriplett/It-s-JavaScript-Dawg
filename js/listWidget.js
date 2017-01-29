@@ -10,9 +10,11 @@ function handleResponse() {
   }
 };
 
+
+//Generate List Items, Json passed into it and returned//
 function generatListItems(employees)  {
-    var statusHTML = '';
-    for (var i=0; i<employees.length; i += 1) {
+    const statusHTML = '';
+    for (let i=0; i<employees.length; i += 1) {
         if (employees[i].inoffice === true) {
             statusHTML += '<li class="in">';
         } else {
@@ -23,7 +25,9 @@ function generatListItems(employees)  {
     }
     
     return statusHTML;
-}
+} //End Generate List Items
+
+
 
 function generateUnorderedList(listItems) {
     return '<ul class="bulleted">' + listItems +  '</ul>';
@@ -32,3 +36,26 @@ function generateUnorderedList(listItems) {
 function addEmployeesToPage(employees) {
     document.getElementById('employeeList').innerHTML = generateUnorderedList(generatListItems(employees));
 }
+
+
+ajaxPromise.then(generatListItems)
+            .then(generateUnorderedList)
+            .then(addEmployeesToPage)
+            .catch(function(error){
+                console.log(error); 
+            });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
