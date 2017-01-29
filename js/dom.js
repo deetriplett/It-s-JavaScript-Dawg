@@ -8,7 +8,32 @@ const addItemInput = document.querySelector('input.addItemInput');
 const addItemButton = document.querySelector('button.addItemButton');
 const removeItemButton = document.querySelector('button.removeItemButton');
 const listUl = listDiv.querySelector('ul');
+const attachButton = listUl.children;
 
+//FUNCTIONS//
+
+//Add remove/up/down buttons for all li items//
+  function attachListItemButtons(li) {
+    let up = document.createElement('button');
+      up.className = "up";
+      up.textContent = "up";
+      li.appendChild(up);
+    let down = document.createElement('button');
+      down.className = "down";
+      down.textContent = "down";
+      li.appendChild(down);
+    let remove = document.createElement('button');
+      remove.className = "remove";
+      remove.textContent = "remove";
+      li.appendChild(remove);
+}
+//loop through to add all buttons to list items
+for (let index = 0; index < attachButton.length; index +=1) {
+  attachListItemButtons(attachButton[index]);
+}
+
+
+//--------------------------------------//
 
 //Remove Task List items--with Remove Button, move up and down//
 listUl.addEventListener('click', (event) => { 
@@ -47,10 +72,6 @@ listUl.addEventListener('click', (event) => {
 //    }
 //  });
 
-//When any element is clicked, it's logged
-//document.addEventListener('click', (event) => {
-//  console.log(event.target);
-//});
 
 //Hide-Show Toggle for List//  
 toggleList.addEventListener('click', () => {
@@ -74,36 +95,12 @@ addItemButton.addEventListener('click', () => {
   let ul = document.getElementsByTagName('ul')[0];
   let li = document.createElement('li');
   li.textContent = addItemInput.value;
+  attachListItemButtons(li);
   ul.appendChild(li);
   addItemInput.value = '';
 
   
 });
-
-  //Add remove/up/down buttons for all li items//
-  function attachListItemButtons(li) {
-    let up = document.createElement('button');
-      up.className = "up";
-      up.textContent = "up";
-    let down = document.createElement('button');
-      down.className = "down";
-      down.textContent = "down";
-    let remove = document.createElement('button');
-      remove.className = "remove";
-      remove.textContent = "remove";
-  
-     
-
-
-}
-
-
-
-
-
-
-
-
 
   
 //Remove List Item//
@@ -115,6 +112,10 @@ addItemButton.addEventListener('click', () => {
 
   
   
+//When any element is clicked, it's logged
+//document.addEventListener('click', (event) => {
+//  console.log(event.target);
+//});
   
   
   
