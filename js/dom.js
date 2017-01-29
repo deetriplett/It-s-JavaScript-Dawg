@@ -25,7 +25,14 @@ listUl.addEventListener('click', (event) => {
        if (prevLi) {
       ul.insertBefore(li, prevLi); }
       }
-    }                                          
+    }
+    if (event.target.className == 'down'){
+      let li = event.target.parentNode;
+      let nextLi = li.nextElementSibling;
+      let ul = li.parentNode;
+       if (nextLi) {
+      ul.insertBefore(nextLi, li); }
+      }
   });
 
 //Mouse Over Event for List//
@@ -69,11 +76,26 @@ addItemButton.addEventListener('click', () => {
   li.textContent = addItemInput.value;
   ul.appendChild(li);
   addItemInput.value = '';
-  //Add remove button//
+
+  
 });
 
-//Move List items up/down//
+  //Add remove/up/down buttons for all li items//
+  function attachListItemButtons(li) {
+    let up = document.createElement('button');
+      up.className = "up";
+      up.textContent = "up";
+    let down = document.createElement('button');
+      down.className = "down";
+      down.textContent = "down";
+    let remove = document.createElement('button');
+      remove.className = "remove";
+      remove.textContent = "remove";
+  
+     
 
+
+}
 
 
 
