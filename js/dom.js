@@ -10,12 +10,21 @@ const removeItemButton = document.querySelector('button.removeItemButton');
 const listUl = listDiv.querySelector('ul');
 
 
-//Remove Task List items--with Remove Button//
+//Remove Task List items--with Remove Button, move up and down//
 listUl.addEventListener('click', (event) => { 
   if (event.target.tagName == "BUTTON") { 
-    let li = event.target.parentNode;
-    let ul = li.parentNode;
-    ul.removeChild(li);
+    if (event.target.className == 'remove'){
+      let li = event.target.parentNode;
+      let ul = li.parentNode;
+      ul.removeChild(li);
+      }
+   if (event.target.className == 'up'){
+      let li = event.target.parentNode;
+      let prevLi = li.previousElementSibling;
+      let ul = li.parentNode;
+       if (prevLi) {
+      ul.insertBefore(li, prevLi); }
+      }
     }                                          
   });
 
@@ -63,12 +72,24 @@ addItemButton.addEventListener('click', () => {
   //Add remove button//
 });
 
+//Move List items up/down//
+
+
+
+
+
+
+
+
+
+
+  
 //Remove List Item//
-removeItemButton.addEventListener('click', () => {
-  let ul = document.getElementsByTagName('ul')[0];
-  let li = document.querySelector('li:last-child');
-  ul.removeChild(li);
-});
+//removeItemButton.addEventListener('click', () => {
+//  let ul = document.getElementsByTagName('ul')[0];
+//  let li = document.querySelector('li:last-child');
+//  ul.removeChild(li);
+//});
 
   
   
